@@ -1,0 +1,47 @@
+# depslib dependency file v1.0
+1637944010 source:d:\documentos\unipe\2021.2\dev c\jogodamemoria\main.c
+	<dos.h>
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+	<conio.h>
+	"DateAndTime.h"
+	"Jogador.h"
+	"saveRankingGame.h"
+
+1637584291 d:\documentos\unipe\2021.2\dev c\jogodamemoria\saverankinggamer.h
+	<stdio.h>
+	<stdlib.h>
+
+1637594102 d:\documentos\unipe\2021.2\dev c\jogodamemoria\savefiles.h
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+
+1637596462 d:\documentos\unipe\2021.2\dev c\jogodamemoria\dateandtime.h
+	<stdio.h>
+	<time.h>
+
+1637942667 d:\documentos\unipe\2021.2\dev c\jogodamemoria\saverankinggame.h
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	"Jogador.h"
+
+1637777158 d:\documentos\unipe\2021.2\dev c\jogodamemoria\tests.h
+	<stdio.h>
+	"saveRankingGame.h"
+	"DateAndTime.h"
+	<time.h>
+	"Jogador.h"
+	"menu.h"
+
+1637936428 d:\documentos\unipe\2021.2\dev c\jogodamemoria\jogador.h
+	<stdio.h>
+	<string.h>
+
+1637777019 d:\documentos\unipe\2021.2\dev c\jogodamemoria\menu.h
+	<stdio.h>
+	<windows.h>
+	<conio.h>
+

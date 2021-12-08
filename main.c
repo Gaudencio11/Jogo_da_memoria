@@ -8,7 +8,7 @@
 
 
 
-//Função para gerar uma matriz aletória
+//FunÃ§Ã£o para gerar uma matriz aletÃ³ria
 int *matriz_aleatoria(){
     //Cria 4 vetores com tamanho int
     int **matriz = malloc(sizeof(int*)*4);
@@ -17,7 +17,7 @@ int *matriz_aleatoria(){
     int linha, coluna, random_coluna, random_linha, index, x, apoio =0;
 
 
-    //aloca para cada vetor 4 espaços do tamanho int
+    //aloca para cada vetor 4 espaÃ§os do tamanho int
     for(index=0;index<4; index++){
         matriz[index] = malloc(sizeof(int)*4);
     }
@@ -59,24 +59,24 @@ int *matriz_aleatoria(){
     return matriz;
 }
 
-//Criei apenas para simular a estrutura que vocês criaram para o jogador
+//Criei apenas para simular a estrutura que vocÃªs criaram para o jogador
 typedef struct jogador{
     int tipo, pontuacao;
 }JOGADOR;
 
 #define time_t ST_HORA = time(NULL);
 
-//Função para gerar o layout da matriz a ser exibida.
-//Recebe a matriz, o tipo 1- para a matriz dos valores e 0 - para o verso, repetir para saber se repete ou não
+//FunÃ§Ã£o para gerar o layout da matriz a ser exibida.
+//Recebe a matriz, o tipo 1- para a matriz dos valores e 0 - para o verso, repetir para saber se repete ou nÃ£o
 int exibir_cartas(int **cartas[4][4], int tipo, int repetir){
-    //indica que tipo é, virado para cima ou para baixo
+    //indica que tipo Ã©, virado para cima ou para baixo
 
     int linha, coluna, index;
     int **ponteiro_da_matriz = cartas;
     if(repetir == 1 && tipo ==1 || tipo == 0 ){
         printf("\n");
         if (tipo == 1){
-            printf("Veja atentamente! Irá se apagar em 5 segundos\n");
+            printf("Veja atentamente! IrÃ¡ se apagar em 5 segundos\n");
             sleep(2);
         }else{
             printf("Cartas viradas para baixo:\n");
@@ -104,7 +104,7 @@ int exibir_cartas(int **cartas[4][4], int tipo, int repetir){
 }
 
 //Serve para conferir os valores digitados
-//0 para tudo ok, 1 para posicao impossível e 2 para número escrito já selecionado
+//0 para tudo ok, 1 para posicao impossÃ­vel e 2 para nÃºmero escrito jÃ¡ selecionado
 int conferir_se_poscao_possivel_e_valor_naoZero(int linha, int coluna, int **matriz_conferir_zero[4][4]){
 
     int **pont_matriz = matriz_conferir_zero;
@@ -119,7 +119,7 @@ int conferir_se_poscao_possivel_e_valor_naoZero(int linha, int coluna, int **mat
 
 }
 
-//Função principal
+//FunÃ§Ã£o principal
 int main(void){
     setlocale(LC_ALL,"Portuguese");
 
@@ -193,9 +193,9 @@ int main(void){
             exibir_cartas(matriz_original, 1, repetir);
             exibir_cartas(cartas_para_baixo, 0, repetir);
             printf("\n");
-            //primeira posição:
+            //primeira posiÃ§Ã£o:
             while(1){
-                printf("\nJogador %i Digite a posição de uma carta: \n", index);
+                printf("\nJogador %i Digite a posiÃ§Ã£o de uma carta: \n", index);
                 printf("linha:");
                 scanf(" %s", &primeira_linha_digitada);
                 printf("coluna:");
@@ -206,28 +206,28 @@ int main(void){
 
                 primeiro_linha = converterEntradaDoJogadorParaTipoNumerico(linhaSeForDoTipoNumerico,primeira_linha_digitada);
                 primeiro_coluna = converterEntradaDoJogadorParaTipoNumerico(colunaSeForDoTipoNumerico,primeira_coluna_digitada);
-                //Se retornar 1 o usuário digitou uma posição impossível
-                //Se retornar 2 o número já foi escolhido
-                //se retornar 0 está ok, e ele quebra o laço
+                //Se retornar 1 o usuÃ¡rio digitou uma posiÃ§Ã£o impossÃ­vel
+                //Se retornar 2 o nÃºmero jÃ¡ foi escolhido
+                //se retornar 0 estÃ¡ ok, e ele quebra o laÃ§o
                 apoio = conferir_se_poscao_possivel_e_valor_naoZero(primeiro_linha-1, primeiro_coluna-1, matriz_original);
                 if(apoio == 1){
-                    printf("\nEssa posição não existe! \nDigite Novamente\n");
+                    printf("\nEssa posiÃ§Ã£o nÃ£o existe! \nDigite Novamente\n");
                     sleep(2);
                 }else if(apoio == 2){
-                    printf("\nEssa carta já foi escolhida! \nDigite Novamente\n");
+                    printf("\nEssa carta jÃ¡ foi escolhida! \nDigite Novamente\n");
                     sleep(2);
                 }else if(apoio==0){
                     break;
                 }
             }
 
-            printf("\n>> Número da Carta %i x %i : %i <<\n", primeiro_linha, primeiro_coluna, matriz_original[primeiro_linha-1][primeiro_coluna-1]);
+            printf("\n>> NÃºmero da Carta %i x %i : %i <<\n", primeiro_linha, primeiro_coluna, matriz_original[primeiro_linha-1][primeiro_coluna-1]);
             printf("---------------------------------- \n");
             sleep(3);
 
-            //segunda posição:
+            //segunda posiÃ§Ã£o:
             while(1){
-                printf("Digite a posição da carta igual à anterior: \n");
+                printf("Digite a posiÃ§Ã£o da carta igual Ã  anterior: \n");
                 printf("linha:");
                 scanf(" %s", &segunda_linha_digitada);
                 printf("coluna:");
@@ -239,40 +239,40 @@ int main(void){
                 segundo_linha = converterEntradaDoJogadorParaTipoNumerico(linhaSeForDoTipoNumerico,segunda_linha_digitada);
                 segundo_coluna = converterEntradaDoJogadorParaTipoNumerico(colunaSeForDoTipoNumerico,segunda_coluna_digitada);
 
-                //Se retornar 1 o usuário digitou uma posição impossível
-                //Se retornar 2 o número já foi escolhido
-                //se as posições forem iguais ele reclama que a mesma carta foi ecolhida
-                //se retornar 0 está ok, e ele quebra o laço
+                //Se retornar 1 o usuÃ¡rio digitou uma posiÃ§Ã£o impossÃ­vel
+                //Se retornar 2 o nÃºmero jÃ¡ foi escolhido
+                //se as posiÃ§Ãµes forem iguais ele reclama que a mesma carta foi ecolhida
+                //se retornar 0 estÃ¡ ok, e ele quebra o laÃ§o
                 apoio = conferir_se_poscao_possivel_e_valor_naoZero(segundo_linha-1, segundo_coluna-1, matriz_original);
                 if(apoio == 1){
-                    printf("\nEssa posição não existe! \nDigite Novamente\n");
+                    printf("\nEssa posiÃ§Ã£o nÃ£o existe! \nDigite Novamente\n");
 
                 }else if(apoio == 2){
-                    printf("\nEssa carta já foi escolhida! \nDigite Novamente\n");
+                    printf("\nEssa carta jÃ¡ foi escolhida! \nDigite Novamente\n");
                 }else if (segundo_linha == primeiro_linha && segundo_coluna==primeiro_coluna){
-                    printf("\n !!!Você escolheu a mesma carta!!! \Tente Novamente\n");
+                    printf("\n !!!VocÃª escolheu a mesma carta!!! \n Tente Novamente\n");
                     printf("\n");
                 }else if(apoio==0){
                     break;
                 }
             }
 
-            printf("\n>> Número da Carta %i x %i : %i << \n", segundo_linha, segundo_coluna, matriz_original[segundo_linha-1][segundo_coluna-1]);
+            printf("\n>> NÃºmero da Carta %i x %i : %i << \n", segundo_linha, segundo_coluna, matriz_original[segundo_linha-1][segundo_coluna-1]);
             printf("---------------------------------- \n");
             sleep(3);
 
-            // Conferir se os números digitados são iguais e adicionar a pontuação a cada jogador
+            // Conferir se os nÃºmeros digitados sÃ£o iguais e adicionar a pontuaÃ§Ã£o a cada jogador
             system("cls");
             if(matriz_original[segundo_linha-1][segundo_coluna-1] == matriz_original[primeiro_linha-1][primeiro_coluna-1]){
                 printf("......................................... \n");
-                printf("Você Acertou!! \n");
+                printf("VocÃª Acertou!! \n");
                 //Caso Jogador 1
                 if(index == 1){
                     jogador1.pontuacao++;
                     printf("-------------- \n");
-                    printf("Pontuação de jogador %s é: %i\n", nomeDoJogador1, jogador1.pontuacao);
+                    printf("PontuaÃ§Ã£o de jogador %s Ã©: %i\n", nomeDoJogador1, jogador1.pontuacao);
                     printf("-------------- \n");
-                    printf("Pontuação de jogador %s é: %i\n", nomeDoJogador2, jogador2.pontuacao);
+                    printf("PontuaÃ§Ã£o de jogador %s Ã©: %i\n", nomeDoJogador2, jogador2.pontuacao);
                     printf("......................................... \n");
                     sleep(4);
                     system("cls");
@@ -292,8 +292,8 @@ int main(void){
                 }else{
                     jogador2.pontuacao++;
                     printf("----------------------\n");
-                    printf("Pontuação de jogador %s é: %i\n", nomeDoJogador1, jogador1.pontuacao);
-                    printf("Pontuação de jogador %s é: %i\n", nomeDoJogador2, jogador2.pontuacao);
+                    printf("PontuaÃ§Ã£o de jogador %s Ã©: %i\n", nomeDoJogador1, jogador1.pontuacao);
+                    printf("PontuaÃ§Ã£o de jogador %s Ã©: %i\n", nomeDoJogador2, jogador2.pontuacao);
                     printf("---------------------- \n ");
                     sleep(4);
                     system("cls");
@@ -310,12 +310,12 @@ int main(void){
                     index--;
                 }
             }else{
-                printf("jogador %i : Você Errou\n", index);
+                printf("jogador %i : VocÃª Errou\n", index);
                 printf("----------------------\n");
-                printf("Pontuação de jogador %s é: %i\n", nomeDoJogador1, jogador1.pontuacao);
-                printf("Pontuação de jogador %s é: %i\n", nomeDoJogador2, jogador2.pontuacao);
+                printf("PontuaÃ§Ã£o de jogador %s Ã©: %i\n", nomeDoJogador1, jogador1.pontuacao);
+                printf("PontuaÃ§Ã£o de jogador %s Ã©: %i\n", nomeDoJogador2, jogador2.pontuacao);
                 printf("---------------------- \n");
-                printf("vv Vez do próximo jodador vv\n");
+                printf("vv Vez do prÃ³ximo jodador vv\n");
                 sleep(5);
                 system("cls");
                 //permite que as cartas sejam mostradas novamente

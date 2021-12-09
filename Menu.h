@@ -38,7 +38,7 @@ void exibirMenuPrincipal(){
 
 void exibirCreditos(){
 
-    printf("Creditos:\n\n\n\n     Joycevania Salvino\n      Josemilson Lopes\n       Matheus Ramos\n       Marcos Novaisn\n\n"); // mostra todas as vezes os creditos do jogo
+    printf("Creditos:\n\n\n\n     Joycevania Salvino\n      Josemilson Lopes\n       Matheus Ramos\n       Marcos Novais\n\n"); // mostra todas as vezes os creditos do jogo
 
 	printf("\n  Copyright: Todos os direitos reservados.\n\n\n\n");   // kkkkkkkkk
 	sleep(5);
